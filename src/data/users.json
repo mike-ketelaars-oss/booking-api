@@ -1,0 +1,49 @@
+{
+  "users": [
+    {
+      "id": "a1234567-89ab-cdef-0123-456789abcdef",
+      "username": "jdoe",
+      "password": "password123",
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "phoneNumber": "123-456-7890",
+      "pictureUrl": "https://wincacademy.github.io/webpages/media/johndoe.jpeg"
+    },
+    {
+      "id": "b2345678-90cd-ef01-2345-6789abcdef01",
+      "username": "asimpson",
+      "password": "password234",
+      "name": "Anna Simpson",
+      "email": "annasimpson@example.com",
+      "phoneNumber": "123-456-7891",
+      "pictureUrl": "https://wincacademy.github.io/webpages/media/article-author.png"
+    },
+    {
+      "id": "c3456789-01de-f012-3456-789abcdef012",
+      "username": "rjames",
+      "password": "password345",
+      "name": "Robert James",
+      "email": "robertjames@example.com",
+      "phoneNumber": "123-456-7892",
+      "pictureUrl": "https://wincacademy.github.io/webpages/media/robertjames.jpeg"
+    },
+    {
+      "id": "d4567890-12ef-0123-4567-89abcdef0123",
+      "username": "klopez",
+      "password": "password456",
+      "name": "Karen Lopez",
+      "email": "karenlopez@example.com",
+      "phoneNumber": "123-456-7893",
+      "pictureUrl": "https://wincacademy.github.io/webpages/media/person9.jpeg"
+    },
+    {
+      "id": "e5678901-23f0-1234-5678-9abcdef01234",
+      "username": "smiller",
+      "password": "password567",
+      "name": "Steve Miller",
+      "email": "stevemiller@example.com",
+      "phoneNumber": "123-456-7894",
+      "pictureUrl": "https://wincacademy.github.io/webpages/media/person6.jpeg"
+    }
+  ]
+}

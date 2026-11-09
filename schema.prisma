@@ -1,0 +1,86 @@
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "sqlite"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+model User {
+  id          String @id @default(uuid())
+  username    String @unique
+  password    String
+  name        String
+  email       String
+  phoneNumber String
+  pictureUrl  String
+
+  bookings Booking[]
+  reviews  Review[]
+}
+
+model Host {
+  id          String @id @default(uuid())
+  username    String @unique
+  password    String
+  name        String
+  email       String
+  phoneNumber String
+  pictureUrl  String
+  aboutMe     String
+
+  listings Property[]
+}
+
+model Property {
+  id            String @id @default(uuid())
+  title         String
+  description   String
+  location      String
+  pricePerNight Float
+  bedroomCount  Int
+  bathRoomCount Int
+  maxGuestCount Int
+  hostId        String
+  rating        Float
+
+  host      Host      @relation(fields: [hostId], references: [id], onDelete: Cascade)
+  bookings  Booking[]
+  reviews   Review[]
+  amenities Amenity[]
+}
+
+model Booking {
+  id             String   @id @default(uuid())
+  userId         String
+  propertyId     String
+  checkinDate    DateTime
+  checkoutDate   DateTime
+  numberOfGuests Int
+  totalPrice     Float
+  bookingStatus  String
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+}
+
+model Review {
+  id         String @id @default(uuid())
+  userId     String
+  propertyId String
+  rating     Int
+  comment    String
+
+  user     User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  property Property @relation(fields: [propertyId], references: [id], onDelete: Cascade)
+}
+
+model Amenity {
+  id   String @id @default(uuid())
+  name String
+
+  properties Property[]
+}
